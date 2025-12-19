@@ -20,13 +20,13 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore .\HoppieAcarsClient\HoppieAcarsClient.csproj
 
       - name: Build
-        run: dotnet build -c Release --no-restore
+        run: dotnet build -c Release --no-restore .\HoppieAcarsClient\HoppieAcarsClient.csproj
 
       - name: Pack
-        run: dotnet pack -c Release --no-build -o .\artifacts
+        run: dotnet pack -c Release --no-build -o .\artifacts .\HoppieAcarsClient\HoppieAcarsClient.csproj
 
       - name: Push
         run: |
